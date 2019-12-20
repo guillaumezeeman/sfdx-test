@@ -1,6 +1,6 @@
 # Parse variables
-CONSUMERKEY="${heroku config:get CONSUMERKEY -a ntv-scratch-org-manager}"
-HUB_USERNAME="${heroku config:get HUB_USERNAME -a ntv-scratch-org-manager}"
+CONSUMERKEY="$(heroku config:get CONSUMERKEY -a ntv-scratch-org-manager)"
+HUB_USERNAME="$(heroku config:get HUB_USERNAME -a ntv-scratch-org-manager)"
 
 # Create JWTKEY file
 heroku config:get JWTKEY -a ntv-scratch-org-manager > /app/tmp/server.key
