@@ -5,5 +5,5 @@ HUB_USERNAME="$(heroku config:get HUB_USERNAME -a ntv-scratch-org-manager)"
 # Create JWTKEY file
 heroku config:get JWTKEY -a ntv-scratch-org-manager > /tmp/server.key
 
-sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --username $HUB_USERNAME --jwtkeyfile /tmp/server.key -d
-sfdx force:org:create -f config/project-scratch-def.json -d 30 -s
+sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --username $HUB_USERNAME --jwtkeyfile /tmp/server.key -a hubOrg -d
+sfdx force:org:create -f config/project-scratch-def.json -d 30 -s --json
