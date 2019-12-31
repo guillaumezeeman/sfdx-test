@@ -5,4 +5,4 @@ sfdx force:auth:jwt:grant --clientid "$(heroku config:get CONSUMERKEY -a ntv-scr
 	--username "$(heroku config:get HUB_USERNAME -a ntv-scratch-org-manager)" \
 	--jwtkeyfile /tmp/server.key -a hubOrg -d
 
-sfdx force:org:create -f config/project-scratch-def.json -d 30 -s --json
+sfdx force:org:create -f config/project-scratch-def.json -d 30 -s
